@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  background-color: transparent;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 24px;
+  margin-right: auto; 
+  width: 160px;
+}
+
+nav ul {
+  list-style: none; 
+  display: flex; 
+  padding: 0; 
+  position: relative; 
+}
+
+nav ul li {
+  position: relative; 
+}
+nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 5px;
+  background: linear-gradient(45deg, #3aafb3, rgb(0,195,255));
+  border-radius: 8px;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color : rgb(0,195,255) /* Change text color on hover */
+}
+
+.hero {
+  background-image: url('background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.cta-button {
+  position: relative;
+  color: rgb(250, 250, 250);
+  border: 2px solid rgb(0,195,255); /* Border visible */
+  border-radius: 7px;
+  padding: 12px 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 10px 15px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 15px rgb(0, 194, 253);
+}
+
+/* Diamond Shape Stars */
+.cta-button .stars {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px white;
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-in-out;
+}
+
+/* Larger star effect */
+.cta-button .stars.large {
+  width: 10px;
+  height: 10px;
+}
+
+/* Animation Effect on Hover */
+.cta-button:hover .stars {
+  opacity: 1;
+  transform: rotate(45deg) scale(1.2);
+}
+
+/* Star positions */
+.cta-button .stars:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+.cta-button .stars:nth-child(2) {
+  top: 50%;
+  left: 5%;
+  animation: sparkle 1.7s infinite ease-in-out;
+}
+
+.cta-button .stars:nth-child(3) {
+  bottom: 15%;
+  right: 20%;
+  animation: sparkle 1.9s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: translateY(0) scale(0.8) rotate(45deg); }
+  50% { opacity: 1; transform: translateY(-5px) scale(1.2) rotate(45deg); }
+  100% { opacity: 0; transform: translateY(0) scale(0.8) rotate(45deg); }
+}
+
+
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#about {
+  background-image: url('background.jpg');
+}
+
+#events {
+  background-image: url('background.jpg');
+}
+
+#register {
+  background-image: url('background.jpg');
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  color: white;
+}
+
+.ticket-option {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-option h3 {
+  margin-bottom: 10px;
+}
+
+.ticket-option button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.ticket-option button:hover {
+  background-color: #0056b3;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+#contact {
+  background-image: url('background.jpg');
+}
+
+#contact a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 36px;
+  }
+
+  .hero-content p {
+      font-size: 18px;
+  }
+}
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.event-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.event-card h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.event-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.cta-button {
+  display: inline-block;
+  background: rgb(0, 195, 255);
+  color: white;
+  border: 2px solid rgb(0, 195, 255);
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: rgb(0, 195, 255);
+  border-color: rgb(0, 195, 255);
+  box-shadow: 0 0 15px rgb(0, 194, 253);
+}
+
+.stars {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px white;
+  opacity: 1;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-in-out;
+}
+
+.stars.large {
+  width: 10px;
+  height: 10px;
+}
+
+.events-container {
+  display: flex;
+  gap: 70px;
+  padding: 20px;
+}
+
+/* Sidebar Filters */
+.filters {
+  width: 250px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.filters h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.filters label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.filters button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+.filters button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.filters button:active {
+  background: #004494;
+  transform: scale(0.98);
+}
+
+/* Responsive - Adjust width for smaller screens */
+@media (max-width: 768px) {
+  .filters {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Event List */
+.event-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* Event Card */
+.event-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.book-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}

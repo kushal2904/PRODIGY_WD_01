@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+
+    <title>Eventify - Your Event Registration Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="logo.png">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Eventify</h1>
+            <p>Your gateway to unforgettable experiences!</p>
+            
+            <a href="#register" class="cta-button">
+                Register Now
+                <span class="stars"></span>
+                <span class="stars"></span>
+                <span class="stars"></span>
+            </a>
+
+            <a href="#events" class="cta-button">
+                View Events
+                <span class="stars"></span>
+                <span class="stars"></span>
+                <span class="stars"></span>
+            </a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Eventify</h2>
+        <p>Eventify is your one-stop solution for booking event tickets and registration. 
+           Join us for amazing events and make memories that last a lifetime!</p>
+
+        <div class="event-container">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <img src="event1.jpg" alt="event1">
+                <h3>🎶 Unleash the Musical Magic</h3>
+                <p>
+                    Experience electrifying live performances, dazzling lights, and an energetic crowd singing along! 
+                    Get ready for an unforgettable night of rhythm and excitement.
+                </p>
+                
+                <a href="#register" class="cta-button">
+                    Register Now
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                </a>
+            </div>
+    
+            <!-- Event 2 -->
+            <div class="event-card">
+                <img src="event2.jpg" alt="Event 2">
+                <h3>💻 Code, Create, Conquer Now</h3>
+                <p>Showcase your coding skills, solve real-world challenges, and compete with top minds! Build, innovate, and revolutionize the tech world in this high-energy hackathon.</p>
+                <a href="#register" class="cta-button">
+                    Register Now
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                </a>
+            </div>
+    
+            <!-- Event 3 -->
+            <div class="event-card">
+                <img src="event3.jpg" alt="Event 3">
+                <h3>🎭 Lights, Drama, Action Live</h3>
+                <p>Immerse yourself in gripping performances, stunning stage setups, and powerful storytelling! 
+                    Witness emotions come to life in a night of theatrical brilliance. </p>
+                <a href="#register" class="cta-button">
+                    Register Now
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                    <span class="stars"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="events">
+        <h2>Find Your Event</h2>
+    
+        <div class="events-container">
+            <!-- Left Sidebar -->
+            <aside class="filters">
+                <input type="text" id="searchBar" placeholder="🔍 Search events...">
+                
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="music">Music</option>
+                    <option value="tech">Tech</option>
+                    <option value="theatre">Theatre</option>
+                </select>
+    
+                <label for="region">Region:</label>
+                <select id="region">
+                    <option value="all">All</option>
+                    <option value="new-york">New York</option>
+                    <option value="san-francisco">San Francisco</option>
+                    <option value="los-angeles">Los Angeles</option>
+                </select>
+    
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+    
+                <button id="filterBtn">Apply Filters</button>
+            </aside>
+    
+            <!-- Right Side: Events List -->
+            <div class="event-list" id="eventList">
+                <!-- Events will be added dynamically using JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section id="register">
+        <h2>Register for an Event</h2>
+        <p>Fill out the form below to secure your spot!</p>
+        <form id="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event">Select Event:</label>
+            <select id="event" name="event" required>
+                <option value="" disabled selected>Select an event</option>
+                <option value="event1">Rock Music Night</option>
+                <option value="event2">Tech Conference</option>
+                <option value="event3">Broadway Drama Show</option>
+            </select>
+
+            <button type="submit" class="cta-button">
+                Submit Registration
+                <span class="stars"></span>
+                <span class="stars"></span>
+                <span class="stars"></span>
+            </button>
+        </form>
+        <form id="registration-form" autocomplete="off" onsubmit="return false;">
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us at <a href="mailto:info@eventify.com">info@eventify.com</a>.</p>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
