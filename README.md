@@ -1,2 +1,2 @@
-# PRODIGY_WD_01
+# Eventify
  Responsive Landing Page
